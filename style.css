@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+/* Royal White Animated Gradient Background */
+.background {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: #833AB4;
+background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    animation: gradientMove 12s infinite alternate ease-in-out;
+}
+
+@keyframes gradientMove {
+    0% { transform: translateX(-10%) translateY(-5%); }
+    100% { transform: translateX(10%) translateY(5%); }
+}
+
+/* Soft floating particles */
+.particles::before,
+.particles::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(222, 8, 8, 0.05);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.particles::after {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(-120px); opacity: 0.6; }
+    100% { transform: translateY(0); opacity: 0.3; }
+}
+
+/* Main card */
+.card {
+    position: relative;
+    z-index: 10;
+   background: #EEAECA;
+background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    padding: 35px 45px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    animation: reveal 1.5s ease, glow 2.5s infinite alternate;
+}
+
+/* Smooth glow animation */
+@keyframes glow {
+    0% { box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+    100% { box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+}
+
+/* Card reveal */
+@keyframes reveal {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card h1 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    color: #444;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+/* Subtitle styling */
+.subtitle {
+    margin-top: 12px;
+    font-size: 25px;
+    color: #0b0909;
+    letter-spacing: 0.5px;
+    animation: fadeInText 2s ease-in-out forwards;
+    opacity: 0;
+    font-weight: bolder;
+}
+
+@keyframes fadeInText {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Running Car Animation */
+/* Running Car Animation */
+.car {
+    position: absolute;
+    bottom: 60px;
+    left: -300px;
+    width: 250px;
+    z-index: 1;
+    opacity: 0.12; /* subtle professional look */
+    animation: drive 5s linear infinite;
+}
+
+/* Car movement */
+@keyframes drive {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(130vw);
+    }
+}
+
+/* Make SVG responsive */
+.car svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Reverse car (Right → Left) */
+.car.reverse {
+    top: 450px; /* place it on top lane */
+    left: auto;
+    right: -300px;
+    opacity: 0.08;
+    transform: scaleX(-1);
+    animation: driveReverse 5s linear infinite;
+}
+
+/* Reverse animation */
+@keyframes driveReverse {
+    0% {
+        transform: translateX(0) scaleX(-1);
+    }
+    100% {
+        transform: translateX(-130vw) scaleX(-1);
+    }
+}
+
+
+.carup {
+    position: absolute;
+    bottom: 600px;
+    left: -300px;
+    width: 250px;
+    z-index: 1;
+    opacity: 0.12; /* subtle professional look */
+    animation: drive 5s linear infinite;
+}
+
+/* Car movement */
+@keyframes drive {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(130vw);
+    }
+}
+
+/* Make SVG responsive */
+.car svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Reverse car (Right → Left) */
+.car.reverser {
+    top: 80px; /* place it on top lane */
+    left: auto;
+    right: -300px;
+    opacity: 0.08;
+    transform: scaleX(-1);
+    animation: driveReverse 5s linear infinite;
+}
+
+/* Reverse animation */
+@keyframes driveReverse {
+    0% {
+        transform: translateX(0) scaleX(-1);
+    }
+    100% {
+        transform: translateX(-130vw) scaleX(-1);
+    }
+}
